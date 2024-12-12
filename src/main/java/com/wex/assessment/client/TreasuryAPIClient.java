@@ -16,11 +16,15 @@ import java.util.List;
 @Component
 public class TreasuryAPIClient {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     @Value("${treasure.api.url}")
     private String apiUrl;
+
+    @Autowired
+    public TreasuryAPIClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     private static final String FILTER_CURRENCY = "currency";
     private static final String FILTER_RECORD_DATE = "record_date";

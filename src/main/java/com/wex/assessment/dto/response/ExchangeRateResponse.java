@@ -13,6 +13,14 @@ public class ExchangeRateResponse {
     @JsonProperty("effective_date")
     private String effectiveDate;
 
+    public ExchangeRateResponse(String currency, String exchangeRate, String effectiveDate) {
+        this.currency = currency;
+        this.exchangeRate = exchangeRate;
+        this.effectiveDate = effectiveDate;
+    }
+
+    public ExchangeRateResponse() {}
+
     public String getCurrency() {
         return currency;
     }

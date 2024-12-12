@@ -19,6 +19,15 @@ public class Transaction {
     private LocalDate date;
     private BigDecimal amount;
 
+    public Transaction(String transactionId, String testTransaction, BigDecimal bigDecimal, LocalDate date) {
+        this.id = transactionId;
+        this.description = testTransaction;
+        this.date = date;
+        this.amount = bigDecimal;
+    }
+
+    public Transaction() {}
+
     public void setId(String id) {
         this.id = id;
     }

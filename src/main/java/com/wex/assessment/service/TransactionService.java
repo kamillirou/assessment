@@ -15,14 +15,13 @@ import java.math.RoundingMode;
 @Service
 public class TransactionService {
 
-    @Autowired
     private final TransactionRepository transactionRepository;
 
-    @Autowired
-    private TreasuryAPIClient treasuryAPIClient;
+    private final TreasuryAPIClient treasuryAPIClient;
 
-    TransactionService(TransactionRepository transactionRepository) {
+    TransactionService(TransactionRepository transactionRepository, TreasuryAPIClient treasuryAPIClient) {
         this.transactionRepository = transactionRepository;
+        this.treasuryAPIClient = treasuryAPIClient;
     }
 
     public TransactionResponse getTransactionWithExchangeRate(String id, String currency) throws ExchangeRateNotAvailableException {
